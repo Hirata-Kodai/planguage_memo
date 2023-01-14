@@ -1,0 +1,97 @@
+* 基本構文
+- Hello World
+  #+begin_src js :results output 
+	console.log("Hello, World!");
+  #+end_src
+
+  #+RESULTS:
+  : Hello, World!
+- if
+  #+begin_src js
+	let val = 'a';
+	if (val === 'a') {
+		console.log('a');
+	}
+	else if (val === 'b') {
+		console.log('b');
+	}
+	else {
+		console.log('c');
+	}
+  #+end_src
+
+  #+RESULTS:
+  : a
+  : undefined
+- and(&&) or(||)
+  - 1 < x < 3 はかけない
+- 配列，while 文
+  #+begin_src js
+	let inoki = ['1', '2', '3', 'ダー！'];
+	let index = 0;
+	while(index < inoki.length){
+		console.log(inoki[index])
+		index++;}
+  #+end_src
+
+  #+RESULTS:
+  : 1
+  : 2
+  : 3
+  : ダー！
+  : undefined
+- 配列の内包表記・フィルター
+  #+begin_src js
+	const lst = [1, 2, 3, 100];
+	let mapped = lst.map(val => val * 2);
+	const filtered = lst.filter(val => val <= 10);
+	[...mapped].forEach(val => console.log(val));
+	[...filtered].forEach(val => console.log(val));
+   #+end_src
+
+   #+RESULTS:
+   : 2
+   : 4
+   : 6
+   : 200
+   : 1
+   : 2
+   : 3
+   : undefined
+- 関数
+  #+begin_src js
+	const test = () => {
+		console.log('Hello World!');
+		}
+	test();
+  #+end_src
+
+  #+RESULTS:
+  : Hello World!
+  : undefined
+- オブジェクト
+  #+begin_src js
+	const unko = {
+		size: 'でかい',
+		color: 'brown',
+		shape: 'mountain',
+		goToilet: () => {
+			console.log('Hurry! Go to toilet!!');
+			}
+		};
+	console.log(unko.goToilet())
+  #+end_src
+
+  #+RESULTS:
+  : Hurry! Go to toilet!!
+  : undefined
+  : undefined
+
+
+
+* 注意
+- 比較演算
+  - ==
+	- 文字列 '12' と数値 12 でも true になる
+  - ===, !==
+	- 厳密演算子
